@@ -1,3 +1,6 @@
+// AbstractInventoryScreenMixin.java
+// AbstractInventoryScreen mixin for Lepton
+
 package net.omkov.lepton.mixin;
 
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
@@ -18,6 +21,6 @@ public abstract class AbstractInventoryScreenMixin<T extends ScreenHandler> exte
 	
 	@Inject(method = "applyStatusEffectOffset", at = @At(value = "RETURN"))
 	private void applyStatusEffectOffset(CallbackInfo info) {
-		// this.x = (this.width - this.backgroundWidth) / 2;
+		this.x = (this.width - this.backgroundWidth) / 2;
 	}
 }

@@ -1,3 +1,6 @@
+// Lepton.java
+// Main source file for Lepton
+
 package net.omkov.lepton;
 
 import net.fabricmc.api.ClientModInitializer;
