@@ -18,6 +18,6 @@ public abstract class AbstractInventoryScreenMixin<T extends ScreenHandler> exte
 	
 	@Inject(method = "applyStatusEffectOffset", at = @At(value = "RETURN"))
 	private void applyStatusEffectOffset(CallbackInfo info) {
-		this.x = (this.width - this.backgroundWidth) / 2;
+		// this.x = (this.width - this.backgroundWidth) / 2;
 	}
 }

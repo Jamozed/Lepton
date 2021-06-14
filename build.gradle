@@ -1,14 +1,16 @@
 plugins {
-	id 'fabric-loom' version '0.4-SNAPSHOT'
+	id 'fabric-loom' version '0.8-SNAPSHOT'
 	id 'maven-publish'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
+
+repositories {}
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -20,24 +22,23 @@ dependencies {
 processResources {
 	inputs.property "version", project.version
 
-	from(sourceSets.main.resources.srcDirs) {
-		include "fabric.mod.json"
+	filesMatching("fabric.mod.json") {
 		expand "version": project.version
 	}
+}
 
-	from(sourceSets.main.resources.srcDirs) {
-		exclude "fabric.mod.json"
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = "UTF-8"
+	it.options.release = 16
+}
+
+java { withSourcesJar() }
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.archivesBaseName}"}
 	}
 }
-
-tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
-
-task sourcesJar(type: Jar, dependsOn: classes) {
-	classifier = "sources"
-	from sourceSets.main.allSource
-}
-
-jar { from "LICENSE" }
 
 publishing {
 	publications {
@@ -47,5 +48,5 @@ publishing {
 		}
 	}
 
-	repositories { /* mavenLocal() */ }
+	repositories {}
 }

@@ -1,7 +1,7 @@
 package net.omkov.lepton.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.options.GameOptions;
+import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.render.GameRenderer;
 import net.omkov.lepton.Lepton;
 import org.spongepowered.asm.mixin.Mixin;
