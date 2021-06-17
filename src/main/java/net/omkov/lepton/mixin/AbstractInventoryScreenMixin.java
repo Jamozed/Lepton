@@ -1,5 +1,7 @@
 // AbstractInventoryScreenMixin.java
 // AbstractInventoryScreen mixin for Lepton
+// Copyright (C) 2020, Jakob Wakeling
+// All rights reserved.
 
 package net.omkov.lepton.mixin;
 

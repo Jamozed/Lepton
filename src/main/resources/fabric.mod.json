@@ -3,10 +3,10 @@
   "id": "lepton",
   "version": "${version}",
   "name": "Lepton",
-  "description": "Tweaks and QOL enhancements for Minecraft",
+  "description": "Client-side tweaks and QOL enhancements for Minecraft",
   "authors": [ "Jamozed" ],
   "contact": { "sources": "https://git.omkov.net/Jamozed/Lepton" },
-  "license": "OLPD",
+  "license": "OLPE",
   "icon": "assets/lepton/icon.png",
   "environment": "client",
   "entrypoints": {
@@ -14,9 +14,9 @@
   },
   "mixins": [ "lepton.mixins.json" ],
   "depends": {
-    "fabricloader": ">=0.11.6",
+    "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": ">=1.17",
+    "minecraft": "1.17.x",
     "java": ">=16"
   }
 }

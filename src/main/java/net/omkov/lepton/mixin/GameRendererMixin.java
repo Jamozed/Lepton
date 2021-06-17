@@ -1,5 +1,7 @@
 // GameRendererMixin.java
 // GameRenderer mixin for Lepton
+// Copyright (C) 2020, Jakob Wakeling
+// All rights reserved.
 
 package net.omkov.lepton.mixin;
 
@@ -24,7 +26,7 @@ public class GameRendererMixin {
 		)
 	)
 	private double getFov(GameOptions options) {
-		if (Lepton.bindingZoom.isPressed()) {
+		if (Lepton.bindZoom.isPressed()) {
 			if (!Lepton.zoom) {
 				Lepton.zoom = true;
 				Lepton.zoomSmoothCamera = options.smoothCameraEnabled;
