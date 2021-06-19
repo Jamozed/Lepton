@@ -4,8 +4,19 @@
 
 ## Components
 
-* Flight
+* Elytra Acceleration
+* Flight and NoFall
 * Zoom
+
+## Build Instructions
+
+Lepton uses Gradle and Java 16 to build.  
+Jar files will be located in the `build/libs` directory.
+
+### UNIX Build
+
+Run `./gradlew build` to build.  
+Run `./gradlew vscode` to configure debugging for Visual Studio Code.
 
 ## Meta
 

@@ -5,8 +5,13 @@
 
 package net.omkov.lepton.module;
 
+import net.minecraft.client.MinecraftClient;
+import net.omkov.lepton.Lepton;
+
 /**  */
 public abstract class Module {
+	protected static final MinecraftClient MC = Lepton.MC;
+	
 	private boolean enabled = false;
 	
 	/** Return true if the module is enabled. */

@@ -25,6 +25,8 @@ public class ModuleNoFall extends Module {
 	public void onUpdate() {
 		ClientPlayerEntity p = Lepton.MC.player;
 		
+		if (p == null) { return; }
+		
 		if (p.fallDistance <= (p.isFallFlying() ? 1.0f : 2.0f)) { return; }
 		if (p.isFallFlying() && p.isSneaking() && (p.getVelocity().y < -0.5)) { return; }
 		
