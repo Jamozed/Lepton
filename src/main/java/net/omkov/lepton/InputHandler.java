@@ -19,7 +19,6 @@ public class InputHandler {
 	
 	public KeyBinding bZoom = null;
 	public KeyBinding bFly = null;
-	public KeyBinding bFreecam = null;
 	
 	/** Construct an InputHandler object. */
 	private InputHandler() {}
@@ -32,9 +31,8 @@ public class InputHandler {
 	
 	/** Initialise key bindings. */
 	private void initBindings() {
-		bZoom    = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.zoom",    InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_C,       "key.categories.misc"));
-		bFly     = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.fly",     InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats"));
-		bFreecam = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.freecam", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats"));
+		bZoom = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.zoom", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_C,       "key.categories.misc"));
+		bFly  = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.fly",  InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats"));
 	}
 	
 	/** Initialise input handlers. */
