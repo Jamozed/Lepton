@@ -23,7 +23,7 @@ public class GameRendererMixin {
 		)
 	)
 	private double getFov(GameOptions options) {
-		if (Lepton.IH.bZoom.isPressed()) {
+		if (Lepton.bindZoom.isPressed()) {
 			if (!Lepton.zoomEnabled) {
 				Lepton.zoomEnabled = true;
 				Lepton.MC.worldRenderer.scheduleTerrainUpdate();
