@@ -1,9 +1,10 @@
 # Lepton
 
-> Client-side tweaks and QOL enhancements for Minecraft
+> Miscellaneous client-side tweaks and tools for Minecraft
 
 ## Components
 
+* Flight
 * Zoom
 
 ## Meta

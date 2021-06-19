@@ -6,21 +6,17 @@
 package net.omkov.lepton;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
-import org.lwjgl.glfw.GLFW;
+import net.minecraft.client.MinecraftClient;
 
-/** The Lepton singleton stores global mod data. */
+/** The Lepton class stores global mod data. */
 public class Lepton implements ClientModInitializer {
-	public static KeyBinding bindZoom = null;
+	public static final MinecraftClient MC = MinecraftClient.getInstance();
+	public static final InputHandler IH = InputHandler.getInstance();
 	
 	public static final double zoomFactor = 4.0;
-	public static boolean zoom = false;
-	public static boolean zoomSmoothCamera = false;
+	
+	public static boolean zoomEnabled = false;
 	
 	@Override
-	public void onInitializeClient() {
-		bindZoom = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.zoom", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_C, "key.categories.misc"));
-	}
+	public void onInitializeClient() { IH.init(); }
 }

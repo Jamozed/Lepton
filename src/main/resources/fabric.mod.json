@@ -3,7 +3,7 @@
   "id": "lepton",
   "version": "${version}",
   "name": "Lepton",
-  "description": "Client-side tweaks and QOL enhancements for Minecraft",
+  "description": "Miscellaneous client-side tweaks and tools for Minecraft",
   "authors": [ "Jamozed" ],
   "contact": { "sources": "https://git.omkov.net/Jamozed/Lepton" },
   "license": "OLPE",
