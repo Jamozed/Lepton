@@ -23,6 +23,7 @@ public class Lepton implements ClientModInitializer {
 	
 	public static KeyBinding bindElytra = null;
 	public static KeyBinding bindFly = null;
+	public static KeyBinding bindNoFall = null;
 	public static KeyBinding bindZoom = null;
 	
 	private static ModuleElytra mElytra = new ModuleElytra();
@@ -37,11 +38,13 @@ public class Lepton implements ClientModInitializer {
 	public void onInitializeClient() {
 		bindElytra = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.elytra", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats"));
 		bindFly    = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.fly",    InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats"));
+		bindNoFall = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.nofall", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats"));
 		bindZoom   = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.lepton.zoom",   InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_C,       "key.categories.misc"));
 		
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (bindElytra.wasPressed()) { mElytra.toggle(); }
-			while (bindFly.wasPressed()) { mFlight.toggle(); mNoFall.toggle(); }
+			while (bindFly.wasPressed()) { mFlight.toggle(); }
+			while (bindNoFall.wasPressed()) { mNoFall.toggle(); }
 			
 			if (mElytra.isEnabled()) { mElytra.onUpdate(); }
 			if (mFlight.isEnabled()) { mFlight.onUpdate(); }
