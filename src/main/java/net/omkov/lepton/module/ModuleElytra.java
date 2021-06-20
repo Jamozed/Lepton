@@ -7,19 +7,19 @@ package net.omkov.lepton.module;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Items;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
 public class ModuleElytra extends Module {
 	@Override
 	public void onEnable() {
-		MC.player.sendMessage(new LiteralText("Elytra enabled"), false);
+		MC.player.sendMessage(new TranslatableText("message.lepton.elytra.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		MC.player.sendMessage(new LiteralText("Elytra disabled"), false);
+		MC.player.sendMessage(new TranslatableText("message.lepton.elytra.disable"), true);
 	}
 	
 	@Override

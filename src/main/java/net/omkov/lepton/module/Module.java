@@ -27,11 +27,11 @@ public abstract class Module {
 	public final void toggle() { setEnabled(!enabled); }
 	
 	/** Called when the module has been enabled. */
-	protected abstract void onEnable();
+	protected void onEnable() {};
 	
 	/** Called when the module has been disabled. */
-	protected abstract void onDisable();
+	protected void onDisable() {};
 	
 	/** Called on game update. */
-	protected abstract void onUpdate();
+	protected void onUpdate() {};
 }

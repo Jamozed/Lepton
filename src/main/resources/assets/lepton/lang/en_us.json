@@ -1,6 +1,14 @@
 {
-  "key.categories.cheats": "Cheats",
-  "key.lepton.elytra": "Elytra",
-  "key.lepton.fly": "Flight",
-  "key.lepton.zoom": "Zoom"
+  "key.categories.cheats": "Hacks",
+  "key.lepton.elytra":     "Toggle Elytra Accelerator",
+  "key.lepton.fly":        "Toggle Flight",
+  "key.lepton.nofall":     "Toggle NoFall",
+  "key.lepton.zoom":       "Zoom",
+  
+  "message.lepton.elytra.disable": "Toggled Elytra Accelerator §cOFF§r",
+  "message.lepton.elytra.enable":  "Toggled Elytra Accelerator §aON§r",
+  "message.lepton.flight.disable": "Toggled Flight §cOFF§r",
+  "message.lepton.flight.enable":  "Toggled Flight §aON§r",
+  "message.lepton.nofall.disable": "Toggled NoFall §cOFF§r",
+  "message.lepton.nofall.enable":  "Toggled NoFall §aON§r"
 }

@@ -6,18 +6,18 @@
 package net.omkov.lepton.module;
 
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.Vec3d;
 
 public class ModuleFlight extends Module {
 	@Override
 	public void onEnable() {
-		MC.player.sendMessage(new LiteralText("Flight enabled"), false);
+		MC.player.sendMessage(new TranslatableText("message.lepton.flight.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		MC.player.sendMessage(new LiteralText("Flight disabled"), false);
+		MC.player.sendMessage(new TranslatableText("message.lepton.flight.disable"), true);
 	}
 	
 	@Override

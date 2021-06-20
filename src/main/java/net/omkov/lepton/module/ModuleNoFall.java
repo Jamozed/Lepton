@@ -7,18 +7,18 @@ package net.omkov.lepton.module;
 
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket.OnGroundOnly;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.omkov.lepton.Lepton;
 
 public class ModuleNoFall extends Module {
 	@Override
 	public void onEnable() {
-		Lepton.MC.player.sendMessage(new LiteralText("NoFall enabled"), false);
+		MC.player.sendMessage(new TranslatableText("message.lepton.nofall.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		Lepton.MC.player.sendMessage(new LiteralText("NoFall disabled"), false);
+		MC.player.sendMessage(new TranslatableText("message.lepton.nofall.disable"), true);
 	}
 	
 	@Override
