@@ -13,12 +13,12 @@ import net.omkov.lepton.Lepton;
 public class ModuleNoFall extends Module {
 	@Override
 	public void onEnable() {
-		MC.player.sendMessage(new TranslatableText("message.lepton.nofall.enable"), true);
+		Lepton.MC.player.sendMessage(new TranslatableText("message.lepton.nofall.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		MC.player.sendMessage(new TranslatableText("message.lepton.nofall.disable"), true);
+		Lepton.MC.player.sendMessage(new TranslatableText("message.lepton.nofall.disable"), true);
 	}
 	
 	@Override

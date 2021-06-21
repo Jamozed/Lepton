@@ -3,18 +3,18 @@
   "id": "lepton",
   "version": "${version}",
   "name": "Lepton",
-  "description": "Miscellaneous client-side tweaks and tools for Minecraft",
-  "authors": [ "Jamozed" ],
+  "description": "Minecraft Client-Side Hack Mod",
   "contact": { "sources": "https://git.omkov.net/Jamozed/Lepton" },
+  "authors": [ "Jamozed" ],
   "license": "OLPE",
   "icon": "assets/lepton/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [ "net.omkov.lepton.Lepton" ]
+    "client": [ "net.omkov.lepton.LeptonClient" ]
   },
   "mixins": [ "lepton.mixins.json" ],
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.11.6",
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"

@@ -5,14 +5,9 @@
 
 package net.omkov.lepton.module;
 
-import net.minecraft.client.MinecraftClient;
-import net.omkov.lepton.Lepton;
-
-/**  */
+/** The Module abstract class provides a base for Alum modules. */
 public abstract class Module {
-	protected static final MinecraftClient MC = Lepton.MC;
-	
-	private boolean enabled = false;
+	protected boolean enabled = false;
 	
 	/** Return true if the module is enabled. */
 	public final boolean isEnabled() { return enabled; }
