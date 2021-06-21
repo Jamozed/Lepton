@@ -4,9 +4,6 @@
   "package": "net.omkov.lepton.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [],
-  "client": [
-    "AbstractInventoryScreenMixin",
-    "GameRendererMixin"
-  ],
+  "client": [],
   "injectors": { "defaultRequire": 1 }
 }

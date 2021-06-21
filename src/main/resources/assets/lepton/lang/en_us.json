@@ -3,7 +3,6 @@
   "key.lepton.elytra":     "Toggle Elytra Accelerator",
   "key.lepton.fly":        "Toggle Flight",
   "key.lepton.nofall":     "Toggle NoFall",
-  "key.lepton.zoom":       "Zoom",
   
   "message.lepton.elytra.disable": "Toggled Elytra Accelerator §cOFF§r",
   "message.lepton.elytra.enable":  "Toggled Elytra Accelerator §aON§r",
