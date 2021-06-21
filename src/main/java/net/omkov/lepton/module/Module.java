@@ -1,11 +1,10 @@
 // Module.java
-// Module abstract class for Lepton
 // Copyright (C) 2021, Jakob Wakeling
 // All rights reserved.
 
 package net.omkov.lepton.module;
 
-/** The Module abstract class provides a base for Alum modules. */
+/** The Module abstract class provides a base for modules. */
 public abstract class Module {
 	protected boolean enabled = false;
 	

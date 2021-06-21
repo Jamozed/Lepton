@@ -1,5 +1,4 @@
 // Lepton.java
-// Singleton class for Lepton
 // Copyright (C) 2020, Jakob Wakeling
 // All rights reserved.
 
@@ -10,9 +9,11 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.omkov.lepton.module.ModuleElytra;
-import net.omkov.lepton.module.ModuleFlight;
-import net.omkov.lepton.module.ModuleNoFall;
+import net.omkov.lepton.event.EventManager;
+import net.omkov.lepton.modules.ElytraModule;
+import net.omkov.lepton.modules.FlightModule;
+import net.omkov.lepton.modules.NoFallModule;
+
 import org.lwjgl.glfw.GLFW;
 
 /** The Lepton singleton provides global data storage. */
@@ -20,19 +21,22 @@ public final class Lepton {
 	public static final Lepton CS = new Lepton(); private Lepton() {}
 	public static final MinecraftClient MC = MinecraftClient.getInstance();
 	
-	public BindList binds = new BindList();
-	public ModuList modus = new ModuList();
+	public EventManager eventManager;
+	
+	public BindList binds;
+	public ModuList modus;
 	
 	/** Initialise the Lepton singleton. */
 	public void initialize() {
+		eventManager = new EventManager();
+		
+		binds = new BindList();
+		modus = new ModuList();
+		
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			while (binds.elytra.wasPressed()) { modus.elytra.toggle(); }
-			while (binds.flight.wasPressed()) { modus.flight.toggle(); }
-			while (binds.nofall.wasPressed()) { modus.nofall.toggle(); }
-			
-			if (modus.elytra.isEnabled()) { modus.elytra.onUpdate(); }
-			if (modus.flight.isEnabled()) { modus.flight.onUpdate(); }
-			if (modus.nofall.isEnabled()) { modus.nofall.onUpdate(); }
+			while (binds.elytra.wasPressed()) { modus.elytraModule.toggle(); }
+			while (binds.flight.wasPressed()) { modus.flightModule.toggle(); }
+			while (binds.nofall.wasPressed()) { modus.nofallModule.toggle(); }
 		});
 	}
 	
@@ -51,8 +55,8 @@ public final class Lepton {
 	
 	/** The ModuList class stores modules. */
 	public final class ModuList {
-		public final ModuleElytra elytra = new ModuleElytra();
-		public final ModuleFlight flight = new ModuleFlight();
-		public final ModuleNoFall nofall = new ModuleNoFall();
+		public final ElytraModule elytraModule = new ElytraModule();
+		public final FlightModule flightModule = new FlightModule();
+		public final NoFallModule nofallModule = new NoFallModule();
 	}
 }

@@ -1,5 +1,4 @@
 // LeptonClient.java
-// Client entrypoint class for Lepton
 // Copyright (C) 2020, Jakob Wakeling
 // All rights reserved.
 
