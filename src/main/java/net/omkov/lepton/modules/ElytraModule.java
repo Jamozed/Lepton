@@ -43,7 +43,7 @@ public class ElytraModule extends Module implements UpdateListener {
 		Vec3d vec = new Vec3d(x * multiplier, y * multiplier, z * multiplier);
 		Vec3d vel = Lepton.MC.player.getVelocity();
 		
-		if (vel.length() < 4.2) {
+		if (vel.length() < 4.0) {
 			if (Lepton.MC.options.keyForward.isPressed()) { Lepton.MC.player.setVelocity(vel.add(vec)); }
 			if (Lepton.MC.options.keyBack.isPressed()) { Lepton.MC.player.setVelocity(vel.subtract(vec)); }
 		}

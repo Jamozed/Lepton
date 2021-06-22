@@ -13,7 +13,7 @@ import net.omkov.lepton.event.EventManager;
 import net.omkov.lepton.modules.ElytraModule;
 import net.omkov.lepton.modules.FlightModule;
 import net.omkov.lepton.modules.NoFallModule;
-import net.omkov.lepton.modules.SpeedModule;
+import net.omkov.lepton.modules.DebugSpeedModule;
 
 import org.lwjgl.glfw.GLFW;
 
@@ -38,14 +38,20 @@ public final class Lepton {
 			while (bindList.elytra.wasPressed()) { moduleList.elytraModule.toggle(); }
 			while (bindList.flight.wasPressed()) { moduleList.flightModule.toggle(); }
 			while (bindList.nofall.wasPressed()) { moduleList.nofallModule.toggle(); }
+			// while (bindList.speed.wasPressed()) { moduleList.speedModule.toggle(); }
+			
+			while (bindList.debug_speed.wasPressed()) { moduleList.debugSpeedModule.toggle(); }
 		});
 	}
 	
 	/** The BindList class stores keybindings. */
 	public final class BindList {
-		public final KeyBinding elytra = bind("key.lepton.elytra", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats");
-		public final KeyBinding flight = bind("key.lepton.fly",    InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats");
-		public final KeyBinding nofall = bind("key.lepton.nofall", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.cheats");
+		public final KeyBinding elytra = bind("key.lepton.elytra", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.hacks");
+		public final KeyBinding flight = bind("key.lepton.flight", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.hacks");
+		public final KeyBinding nofall = bind("key.lepton.nofall", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.hacks");
+		// public final KeyBinding speed  = bind("kep.lepton.speed",  InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.hacks");
+		
+		public final KeyBinding debug_speed = bind("key.lepton.debug_speed", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.categories.debug");
 		
 		/** Construct and register a keybinding. */
 		private KeyBinding bind(String key, InputUtil.Type type, int code, String category) {
@@ -59,6 +65,7 @@ public final class Lepton {
 		public final ElytraModule elytraModule = new ElytraModule();
 		public final FlightModule flightModule = new FlightModule();
 		public final NoFallModule nofallModule = new NoFallModule();
-		public final SpeedModule speedModule = new SpeedModule();
+		
+		public final DebugSpeedModule debugSpeedModule = new DebugSpeedModule();
 	}
 }

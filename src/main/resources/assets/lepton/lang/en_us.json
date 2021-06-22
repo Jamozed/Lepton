@@ -1,13 +1,19 @@
 {
-  "key.categories.cheats": "Hacks",
-  "key.lepton.elytra":     "Toggle Elytra Accelerator",
-  "key.lepton.fly":        "Toggle Flight",
-  "key.lepton.nofall":     "Toggle NoFall",
+  "key.categories.debug": "Debug",
+  "key.categories.hacks": "Hacks",
+  "key.lepton.elytra":    "Toggle Elytra Accelerator",
+  "key.lepton.flight":    "Toggle Flight",
+  "key.lepton.nofall":    "Toggle NoFall",
+  "key.lepton.speed":     "Toggle Speed",
+  
+  "key.lepton.debug_speed": "Toggle Speed Debug Message",
   
   "message.lepton.elytra.disable": "Toggled Elytra Accelerator §cOFF§r",
   "message.lepton.elytra.enable":  "Toggled Elytra Accelerator §aON§r",
   "message.lepton.flight.disable": "Toggled Flight §cOFF§r",
   "message.lepton.flight.enable":  "Toggled Flight §aON§r",
   "message.lepton.nofall.disable": "Toggled NoFall §cOFF§r",
-  "message.lepton.nofall.enable":  "Toggled NoFall §aON§r"
+  "message.lepton.nofall.enable":  "Toggled NoFall §aON§r",
+  "message.lepton.speed.disable":  "Toggled Speed §cOFF§r",
+  "message.lepton.speed.enable":   "Toggled Speed §aON§r"
 }
