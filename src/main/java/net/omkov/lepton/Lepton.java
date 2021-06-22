@@ -13,6 +13,7 @@ import net.omkov.lepton.event.EventManager;
 import net.omkov.lepton.modules.ElytraModule;
 import net.omkov.lepton.modules.FlightModule;
 import net.omkov.lepton.modules.NoFallModule;
+// import net.omkov.lepton.modules.SpeedModule;
 import net.omkov.lepton.modules.DebugSpeedModule;
 
 import org.lwjgl.glfw.GLFW;
@@ -65,6 +66,7 @@ public final class Lepton {
 		public final ElytraModule elytraModule = new ElytraModule();
 		public final FlightModule flightModule = new FlightModule();
 		public final NoFallModule nofallModule = new NoFallModule();
+		// public final SpeedModule speedModule = new SpeedModule();
 		
 		public final DebugSpeedModule debugSpeedModule = new DebugSpeedModule();
 	}

@@ -14,7 +14,7 @@ import net.omkov.lepton.Lepton;
 import net.omkov.lepton.module.Module;
 
 public class ElytraModule extends Module implements UpdateListener {
-	private static final double multiplier = 0.01;
+	private static final double multiplier = 0.005;
 	
 	@Override
 	public void onEnable() {
