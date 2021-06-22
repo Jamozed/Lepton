@@ -9,11 +9,13 @@ import net.minecraft.item.Items;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.omkov.lepton.Lepton;
 import net.omkov.lepton.events.UpdateListener;
+import net.omkov.lepton.Lepton;
 import net.omkov.lepton.module.Module;
 
 public class ElytraModule extends Module implements UpdateListener {
+	private static final double multiplier = 0.01;
+	
 	@Override
 	public void onEnable() {
 		Lepton.CS.eventManager.add(UpdateListener.class, this);
@@ -31,11 +33,19 @@ public class ElytraModule extends Module implements UpdateListener {
 		if (Lepton.MC.player.getEquippedStack(EquipmentSlot.CHEST).getItem() != Items.ELYTRA) { return; }
 		if (!Lepton.MC.player.isFallFlying()) { return; }
 		
+		float pitch = (float)Math.toRadians(Lepton.MC.player.getPitch());
 		float yaw = (float)Math.toRadians(Lepton.MC.player.getYaw());
-		Vec3d vfw = new Vec3d(-MathHelper.sin(yaw) * 0.05f, 0, MathHelper.cos(yaw) * 0.05f);
+		
+		float x = -MathHelper.sin(yaw) * MathHelper.cos(pitch);
+		float y = -MathHelper.sin(pitch);
+		float z = MathHelper.cos(yaw) * MathHelper.cos(pitch);
+		
+		Vec3d vec = new Vec3d(x * multiplier, y * multiplier, z * multiplier);
 		Vec3d vel = Lepton.MC.player.getVelocity();
 		
-		if (Lepton.MC.options.keyForward.isPressed()) { Lepton.MC.player.setVelocity(vel.add(vfw)); }
-		if (Lepton.MC.options.keyBack.isPressed()) { Lepton.MC.player.setVelocity(vel.subtract(vfw)); }
+		if (vel.length() < 4.2) {
+			if (Lepton.MC.options.keyForward.isPressed()) { Lepton.MC.player.setVelocity(vel.add(vec)); }
+			if (Lepton.MC.options.keyBack.isPressed()) { Lepton.MC.player.setVelocity(vel.subtract(vec)); }
+		}
 	}
 }

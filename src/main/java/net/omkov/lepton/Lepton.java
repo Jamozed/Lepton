@@ -13,6 +13,7 @@ import net.omkov.lepton.event.EventManager;
 import net.omkov.lepton.modules.ElytraModule;
 import net.omkov.lepton.modules.FlightModule;
 import net.omkov.lepton.modules.NoFallModule;
+import net.omkov.lepton.modules.SpeedModule;
 
 import org.lwjgl.glfw.GLFW;
 
@@ -23,20 +24,20 @@ public final class Lepton {
 	
 	public EventManager eventManager;
 	
-	public BindList binds;
-	public ModuList modus;
+	public BindList bindList;
+	public ModuleList moduleList;
 	
 	/** Initialise the Lepton singleton. */
 	public void initialize() {
 		eventManager = new EventManager();
 		
-		binds = new BindList();
-		modus = new ModuList();
+		bindList = new BindList();
+		moduleList = new ModuleList();
 		
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			while (binds.elytra.wasPressed()) { modus.elytraModule.toggle(); }
-			while (binds.flight.wasPressed()) { modus.flightModule.toggle(); }
-			while (binds.nofall.wasPressed()) { modus.nofallModule.toggle(); }
+			while (bindList.elytra.wasPressed()) { moduleList.elytraModule.toggle(); }
+			while (bindList.flight.wasPressed()) { moduleList.flightModule.toggle(); }
+			while (bindList.nofall.wasPressed()) { moduleList.nofallModule.toggle(); }
 		});
 	}
 	
@@ -54,9 +55,10 @@ public final class Lepton {
 	}
 	
 	/** The ModuList class stores modules. */
-	public final class ModuList {
+	public final class ModuleList {
 		public final ElytraModule elytraModule = new ElytraModule();
 		public final FlightModule flightModule = new FlightModule();
 		public final NoFallModule nofallModule = new NoFallModule();
+		public final SpeedModule speedModule = new SpeedModule();
 	}
 }
