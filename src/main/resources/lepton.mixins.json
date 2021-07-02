@@ -3,9 +3,7 @@
   "minVersion": "0.8",
   "package": "net.omkov.lepton.mixin",
   "compatibilityLevel": "JAVA_16",
-  "mixins": [
-    "ClientPlayerEntityMixin"
-  ],
+  "mixins": [],
   "client": [],
   "injectors": { "defaultRequire": 1 }
 }

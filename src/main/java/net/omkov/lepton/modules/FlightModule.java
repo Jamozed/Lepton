@@ -4,23 +4,28 @@
 
 package net.omkov.lepton.modules;
 
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.Vec3d;
-import net.omkov.lepton.events.UpdateListener;
 import net.omkov.lepton.Lepton;
 import net.omkov.lepton.module.Module;
 
-public class FlightModule extends Module implements UpdateListener {
+public class FlightModule extends Module {
+	public FlightModule() {
+		ClientTickEvents.END_CLIENT_TICK.register((client) -> {
+			while (Lepton.bindings.flight.wasPressed()) { toggle(); }
+			if (isEnabled()) { onUpdate(); }
+		});
+	}
+	
 	@Override
 	public void onEnable() {
-		Lepton.CS.eventManager.add(UpdateListener.class, this);
 		Lepton.MC.player.sendMessage(new TranslatableText("message.lepton.flight.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		Lepton.CS.eventManager.remove(UpdateListener.class, this);
 		Lepton.MC.player.sendMessage(new TranslatableText("message.lepton.flight.disable"), true);
 	}
 	

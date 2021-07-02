@@ -4,18 +4,19 @@
 
 package net.omkov.lepton.modules;
 
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.math.Vec3d;
-import net.omkov.lepton.events.UpdateListener;
 import net.omkov.lepton.Lepton;
 import net.omkov.lepton.module.Module;
 
-public class DebugSpeedModule extends Module implements UpdateListener {
-	@Override
-	public void onEnable() { Lepton.CS.eventManager.add(UpdateListener.class, this); }
-	
-	@Override
-	public void onDisable() { Lepton.CS.eventManager.remove(UpdateListener.class, this); }
+public class DebugSpeedModule extends Module {
+	public DebugSpeedModule() {
+		ClientTickEvents.END_CLIENT_TICK.register((client) -> {
+			while (Lepton.bindings.debug_speed.wasPressed()) { toggle(); }
+			if (isEnabled()) { onUpdate(); }
+		});
+	}
 	
 	@Override
 	public void onUpdate() {
