@@ -4,8 +4,12 @@
 
 package net.omkov.lepton.module;
 
+import net.minecraft.client.MinecraftClient;
+
 /** The Module abstract class provides a base for modules. */
 public abstract class Module {
+	protected static final MinecraftClient MC = MinecraftClient.getInstance();
+	
 	private boolean enabled = false;
 	
 	/** Return true if the module is enabled. */

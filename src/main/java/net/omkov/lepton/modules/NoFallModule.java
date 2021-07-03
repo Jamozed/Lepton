@@ -15,23 +15,23 @@ public class NoFallModule extends Module {
 	public NoFallModule() {
 		ClientTickEvents.END_CLIENT_TICK.register((client) -> {
 			while (Lepton.bindings.nofall.wasPressed()) { toggle(); }
-			if (isEnabled()) { onUpdate(); }
+			if (isEnabled() && MC.player != null) { onUpdate(); }
 		});
 	}
 	
 	@Override
 	public void onEnable() {
-		Lepton.MC.player.sendMessage(new TranslatableText("message.lepton.nofall.enable"), true);
+		MC.player.sendMessage(new TranslatableText("message.lepton.nofall.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		Lepton.MC.player.sendMessage(new TranslatableText("message.lepton.nofall.disable"), true);
+		MC.player.sendMessage(new TranslatableText("message.lepton.nofall.disable"), true);
 	}
 	
 	@Override
 	public void onUpdate() {
-		ClientPlayerEntity p = Lepton.MC.player;
+		ClientPlayerEntity p = MC.player;
 		
 		if (p.fallDistance <= (p.isFallFlying() ? 1.0f : 2.0f)) { return; }
 		if (p.isFallFlying() && p.isSneaking() && (p.getVelocity().y < -0.5)) { return; }
