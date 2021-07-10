@@ -3,14 +3,15 @@
   "id": "lepton",
   "version": "${version}",
   "name": "Lepton",
-  "description": "Minecraft Client-Side Hack Mod",
+  "description": "Minecraft Client-Side Cheat Mod",
   "contact": { "sources": "https://git.omkov.net/Jamozed/Lepton" },
   "authors": [ "Jamozed" ],
   "license": "OLPE",
   "icon": "assets/lepton/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [ "net.omkov.lepton.LeptonClient" ]
+    "client": [ "net.omkov.lepton.LeptonClient" ],
+    "modmenu": [ "net.omkov.lepton.LeptonModMenu" ]
   },
   "mixins": [ "lepton.mixins.json" ],
   "depends": {

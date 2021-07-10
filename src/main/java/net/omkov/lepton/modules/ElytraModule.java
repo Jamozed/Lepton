@@ -45,7 +45,7 @@ public class ElytraModule extends Module {
 		Vec3d vec = new Vec3d(x * multiplier, y * multiplier, z * multiplier);
 		Vec3d vel = MC.player.getVelocity();
 		
-		if (vel.length() < 4.2) {
+		if (vel.length() < Lepton.CONFIG.elytraSpeed) {
 			if (MC.options.keyForward.isPressed()) { MC.player.setVelocity(vel.add(vec)); }
 			if (MC.options.keyBack.isPressed()) { MC.player.setVelocity(vel.subtract(vec)); }
 		}

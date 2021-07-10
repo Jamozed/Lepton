@@ -1,12 +1,15 @@
 {
-  "key.categories.debug": "Debug",
-  "key.categories.hacks": "Hacks",
-  "key.lepton.elytra":    "Toggle Elytra Accelerator",
-  "key.lepton.flight":    "Toggle Flight",
-  "key.lepton.nofall":    "Toggle NoFall",
-  "key.lepton.speed":     "Toggle Speed",
+  "key.categories.debug":  "Debug",
+  "key.categories.lepton": "Lepton",
+  "key.lepton.elytra":     "Toggle Elytra Accelerator",
+  "key.lepton.flight":     "Toggle Flight",
+  "key.lepton.nofall":     "Toggle NoFall",
+  "key.lepton.speed":      "Toggle Speed",
   
   "key.lepton.debug_speed": "Toggle Speed Debug Message",
+  
+  "text.autoconfig.alum.title": "Lepton Options",
+  "text.autoconfig.alum.option.elytraSpeed": "Elytra Accelerator Speed Limit",
   
   "message.lepton.elytra.disable": "Toggled Elytra Accelerator §cOFF§r",
   "message.lepton.elytra.enable":  "Toggled Elytra Accelerator §aON§r",
