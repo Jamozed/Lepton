@@ -34,7 +34,7 @@ public class FlightModule extends Module {
 		ClientPlayerEntity p = MC.player;
 		
 		p.getAbilities().flying = false;
-		p.flyingSpeed = 1.0f;
+		p.airStrafingSpeed = 1.0f;
 		
 		p.setVelocity(0.0, 0.0, 0.0);
 		Vec3d vel = p.getVelocity();

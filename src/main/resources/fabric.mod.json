@@ -3,7 +3,7 @@
   "id": "lepton",
   "version": "${version}",
   "name": "Lepton",
-  "description": "Minecraft Client-Side Cheat Mod",
+  "description": "Minecraft Client-Side \"Hack\" Mod",
   "contact": { "sources": "https://git.omkov.net/Jamozed/Lepton" },
   "authors": [ "Jamozed" ],
   "license": "OLPE",
@@ -17,7 +17,7 @@
   "depends": {
     "fabricloader": ">=0.11.6",
     "fabric": "*",
-    "minecraft": "1.17.x",
+    "minecraft": "1.18.x",
     "java": ">=16"
   }
 }
