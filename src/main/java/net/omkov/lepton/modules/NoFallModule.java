@@ -7,7 +7,7 @@ package net.omkov.lepton.modules;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket.OnGroundOnly;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.omkov.lepton.Lepton;
 import net.omkov.lepton.module.Module;
 
@@ -21,12 +21,12 @@ public class NoFallModule extends Module {
 	
 	@Override
 	public void onEnable() {
-		MC.player.sendMessage(new TranslatableText("message.lepton.nofall.enable"), true);
+		MC.player.sendMessage(Text.translatable("message.lepton.nofall.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		MC.player.sendMessage(new TranslatableText("message.lepton.nofall.disable"), true);
+		MC.player.sendMessage(Text.translatable("message.lepton.nofall.disable"), true);
 	}
 	
 	@Override

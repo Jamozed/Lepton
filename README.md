@@ -9,7 +9,7 @@
 
 ## Build Instructions
 
-Lepton for Minecraft 1.18 uses Java 17, Gradle, and Fabric.  
+Lepton for Minecraft 1.19 uses Java 17, Gradle, and Fabric.  
 Jar files will be located in the `build/libs` directory.
 
 ### UNIX Build
@@ -21,5 +21,4 @@ Run `./gradlew genSources` to generate Minecraft source code for debugging.
 ## Meta
 
 Copyright (C) 2020, Jakob Wakeling  
-All rights reserved.  
-[OMKOV Permissive Licence](https://www.omkov.net/OLPE)
+[MIT Licence](https://opensource.org/licenses/MIT)

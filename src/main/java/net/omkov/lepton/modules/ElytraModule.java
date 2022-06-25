@@ -5,7 +5,7 @@
 package net.omkov.lepton.modules;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.omkov.lepton.Lepton;
@@ -23,12 +23,12 @@ public class ElytraModule extends Module {
 	
 	@Override
 	public void onEnable() {
-		MC.player.sendMessage(new TranslatableText("message.lepton.elytra.enable"), true);
+		MC.player.sendMessage(Text.translatable("message.lepton.elytra.enable"), true);
 	}
 	
 	@Override
 	public void onDisable() {
-		MC.player.sendMessage(new TranslatableText("message.lepton.elytra.disable"), true);
+		MC.player.sendMessage(Text.translatable("message.lepton.elytra.disable"), true);
 	}
 	
 	@Override
@@ -46,8 +46,8 @@ public class ElytraModule extends Module {
 		Vec3d vel = MC.player.getVelocity();
 		
 		if (vel.length() < Lepton.CONFIG.elytraSpeed) {
-			if (MC.options.keyForward.isPressed()) { MC.player.setVelocity(vel.add(vec)); }
-			if (MC.options.keyBack.isPressed()) { MC.player.setVelocity(vel.subtract(vec)); }
+			if (MC.options.forwardKey.isPressed()) { MC.player.setVelocity(vel.add(vec)); }
+			if (MC.options.backKey.isPressed()) { MC.player.setVelocity(vel.subtract(vec)); }
 		}
 	}
 }

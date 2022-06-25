@@ -5,7 +5,7 @@
 package net.omkov.lepton.modules;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.Vec3d;
 import net.omkov.lepton.Lepton;
 import net.omkov.lepton.module.Module;
@@ -21,6 +21,6 @@ public class DebugSpeedModule extends Module {
 	@Override
 	public void onUpdate() {
 		Vec3d vel = MC.player.getVelocity();
-		MC.player.sendMessage(new LiteralText(String.valueOf(vel.length())), true);
+		MC.player.sendMessage(Text.translatable(String.valueOf(vel.length())), true);
 	}
 }

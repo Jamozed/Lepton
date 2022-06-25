@@ -6,7 +6,7 @@
   "description": "Minecraft Client-Side \"Hack\" Mod",
   "contact": { "sources": "https://git.omkov.net/Jamozed/Lepton" },
   "authors": [ "Jamozed" ],
-  "license": "OLPE",
+  "license": "MIT",
   "icon": "assets/lepton/icon.png",
   "environment": "client",
   "entrypoints": {
@@ -17,7 +17,7 @@
   "depends": {
     "fabricloader": ">=0.11.6",
     "fabric": "*",
-    "minecraft": "1.18.x",
-    "java": ">=16"
+    "minecraft": "1.19.x",
+    "java": ">=17"
   }
 }
